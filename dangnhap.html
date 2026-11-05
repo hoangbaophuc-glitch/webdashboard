@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đăng Nhập</title>
+    <style>
+        /* --- Nền ngoài màu trắng --- */
+        body {
+            background-color: #ffffff; 
+            margin: 0;
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;  /* XẾP DỌC: Giúp logo nằm trên, ô xanh nằm dưới */
+            justify-content: center; /* Căn giữa theo chiều dọc */
+            align-items: center;     /* Căn giữa theo chiều ngang */
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%); /* Căn lại tâm logo cho chuẩn xác */
+            width: 100px;
+            height: auto;
+        }
+        /* --- Ô to ở chính giữa --- */
+        .login-box {
+            background-color: #007BFF; 
+            padding: 50px 40px;
+            border-radius: 15px; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+            width: 320px;
+            text-align: center;
+        }
+
+        /* Tiêu đề Đăng nhập */
+        .login-box h2 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        /* --- 2 Ô nhập tài khoản và mật khẩu --- */
+        .input-field {
+            background-color: #e9ecef; 
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px; 
+            font-size: 16px;
+            box-sizing: border-box; 
+            outline: none; 
+        }
+
+        .input-field:focus {
+            background-color: #ffffff; 
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- Nút Đăng Nhập --- */
+        .login-btn {
+            background-color: #ffffff; 
+            color: #007BFF;            
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #e0e0e0; 
+        }
+    </style>
+</head>
+<body>
+
+    <img src="logo.png" alt="Logo Trường" class="logo">
+
+    <div class="login-box">
+        <h2>Đăng Nhập</h2>
+        
+        <input type="text" id="username" class="input-field" placeholder="Tài khoản">
+        <input type="password" id="password" class="input-field" placeholder="Mật khẩu">
+        
+        <button class="login-btn" onclick="checkLogin()">Đăng nhập</button>
+    </div>
+
+    <script>
+        function checkLogin() {
+            // Lấy dữ liệu từ 2 ô input
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+
+            // Kiểm tra điều kiện (bạn có thể đổi tài khoản và mật khẩu tại đây)
+            if (user === "admin" && pass === "123456") {
+                // Nếu đúng, chuyển hướng sang file phongkhach.html
+                window.location.href = "phongkhach.html";
+            } else {
+                // Nếu sai, hiện thông báo lỗi
+                alert("Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại!");
+            }
+        }
+    </script>
+
+</body>
+</html>

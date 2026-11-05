@@ -1,0 +1,206 @@
+* {
+    /* Reset mặc định cho tất cả các thẻ */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    /* Bố cục toàn trang theo cột, chiều cao bằng viewport */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f2f5;
+    overflow: hidden;
+}
+
+/* Header của trang */
+.top-header {
+    /* Thanh tiêu đề trên cùng */
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    z-index: 10;
+}
+
+/* Bố cục chính gồm 2 cột: sidebar và nội dung */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Cột trái: menu điều hướng */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    border-right: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Danh sách menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Style cho các liên kết trong menu */
+.menu a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào menu */
+.menu a:hover {
+    background-color: #e9ecef;
+}
+
+/* Trạng thái menu đang được chọn */
+.menu a.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Khu vực chứa các logo */
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Hình ảnh logo */
+.logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border: 2px solid #333;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #fff;
+}
+
+/* Cột phải: nội dung chính */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Lớp phủ làm mờ nền hình ảnh */
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 0;
+}
+
+/* Tiêu đề phòng */
+.room-title {
+    position: relative;
+    z-index: 1;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Vùng chứa các card đèn */
+.lights-container {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hộp từng đèn */
+.led-box {
+    background-color: #fff;
+    width: 220px;
+    padding: 25px;
+    border: 2px solid #333;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Hiệu ứng biểu tượng đèn */
+.emoji-light {
+    font-size: 70px;
+    display: inline-block;
+    transition: all 0.4s ease; /* Làm mượt khi đổi trạng thái */
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+/* Trạng thái đèn tắt */
+.light-off {
+    filter: grayscale(100%); /* Chuyển đèn sang màu xám */
+    opacity: 0.4;            /* Làm mờ */
+}
+
+/* Trạng thái đèn bật */
+.light-on {
+    filter: grayscale(0%);   /* Hiển thị màu bình thường */
+    opacity: 1;
+    text-shadow: 0 0 20px #ffe600, 0 0 40px #ffea00; /* Hiệu ứng sáng vàng */
+    transform: scale(1.15);  /* Phóng to nhẹ */
+}
+
+/* Nhóm nút ON/OFF */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Style chung cho cả 2 nút */
+.btn-on, .btn-off {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+/* Nút bật đèn */
+.btn-on {
+    background-color: #4CAF50;
+    border-color: #388E3C;
+}
+
+/* Nút tắt đèn */
+.btn-off {
+    background-color: #f44336;
+    border-color: #D32F2F;
+}
+
+/* Hiệu ứng hover cho nút */
+.btn-on:hover, .btn-off:hover {
+    opacity: 0.8;
+}

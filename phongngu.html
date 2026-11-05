@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng điều khiển đèn - Phòng Ngủ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-header">
+        Bảng điều khiển đèn
+    </div>
+
+    <div class="content-wrapper">
+        
+        <div class="sidebar">
+            <div class="menu">
+                <a href="phongkhach.html">PHÒNG KHÁCH</a>
+                <a href="phongngu.html" class="active">PHÒNG NGỦ</a>
+                <a href="phongbep.html">PHÒNG BẾP</a>
+            </div>
+            
+            <div class="logos">
+                <img src="logo.png" alt="Logo Trường" class="logo-img">
+                <img src="logo-khoa.png" alt="Logo Khoa" class="logo-img">
+            </div>
+        </div>
+
+        <div class="main-content" style="background-image: url('bedroom.jpg');">
+            <h1 class="room-title">Phòng Ngủ</h1>
+
+            <div class="lights-container">
+                
+                <div class="led-box">
+                    <div id="Light1" class="emoji-light light-off">💡</div>
+                    <h4 style="margin: 15px 0;">Đèn 1</h4>
+                    <div class="btn-group">
+                        <button class="btn-on" onclick="Light1_On()">ON</button>
+                        <button class="btn-off" onclick="Light1_Off()">OFF</button>
+                    </div>
+                </div>
+
+                <div class="led-box">
+                    <div id="Light2" class="emoji-light light-off">💡</div>
+                    <h4 style="margin: 15px 0;">Đèn 2</h4>
+                    <div class="btn-group">
+                        <button class="btn-on" onclick="Light2_On()">ON</button>
+                        <button class="btn-off" onclick="Light2_Off()">OFF</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var Light1 = document.getElementById('Light1');
+        var Light2 = document.getElementById('Light2');
+
+        // Khi Bật: Đổi class thành "emoji-light light-on" để bật hiệu ứng phát sáng
+        function Light1_On() { 
+            Light1.className = "emoji-light light-on"; 
+        }
+        // Khi Tắt: Đổi class thành "emoji-light light-off" để làm tối mờ đi
+        function Light1_Off() { 
+            Light1.className = "emoji-light light-off"; 
+        }
+
+        function Light2_On() { 
+            Light2.className = "emoji-light light-on"; 
+        }
+        function Light2_Off() { 
+            Light2.className = "emoji-light light-off"; 
+        }
+    </script>
+
+</body>
+</html>

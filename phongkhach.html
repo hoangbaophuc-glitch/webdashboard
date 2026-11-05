@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Thẻ meta: khai báo bộ mã ký tự cho trang -->
+    <meta charset="UTF-8">
+    <!-- Thẻ title: tiêu đề hiển thị trên tab trình duyệt -->
+    <title>Bảng điều khiển đèn - Phòng Khách</title>
+    <!-- Thẻ link: kết nối file CSS cho giao diện -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Phần đầu trang: tiêu đề chính -->
+    <div class="top-header">
+        Bảng điều khiển đèn
+    </div>
+
+    <!-- Vùng chứa toàn bộ nội dung chính của trang -->
+    <div class="content-wrapper">
+        <!-- Thanh điều hướng trái: các phòng -->
+        <div class="sidebar">
+            <div class="menu">
+                <a href="phongkhach.html" class="active">PHÒNG KHÁCH</a>
+                <a href="phongngu.html">PHÒNG NGỦ</a>
+                <a href="phongbep.html">PHÒNG BẾP</a>
+            </div>
+
+            <!-- Khu vực logo -->
+            <div class="logos">
+                <img src="logo.png" alt="Logo Trường" class="logo-img">
+                <img src="logo-khoa.png" alt="Logo Khoa" class="logo-img">
+            </div>
+        </div>
+
+        <!-- Nội dung chính: nền phòng khách và các đèn -->
+        <div class="main-content" style="background-image: url('livingroom.jpg');">
+            <h1 class="room-title">Phòng Khách</h1>
+
+            <!-- Container chứa các khối đèn -->
+            <div class="lights-container">
+                <!-- Khối điều khiển đèn 1 -->
+                <div class="led-box">
+                    <div id="Light1" class="emoji-light light-off">💡</div>
+                    <h4 style="margin: 15px 0;">Đèn 1</h4>
+                    <div class="btn-group">
+                        <button class="btn-on" onclick="Light1_On()">ON</button>
+                        <button class="btn-off" onclick="Light1_Off()">OFF</button>
+                    </div>
+                </div>
+
+                <!-- Khối điều khiển đèn 2 -->
+                <div class="led-box">
+                    <div id="Light2" class="emoji-light light-off">💡</div>
+                    <h4 style="margin: 15px 0;">Đèn 2</h4>
+                    <div class="btn-group">
+                        <button class="btn-on" onclick="Light2_On()">ON</button>
+                        <button class="btn-off" onclick="Light2_Off()">OFF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script xử lý bật/tắt đèn -->
+    <script>
+        var Light1 = document.getElementById('Light1');
+        var Light2 = document.getElementById('Light2');
+
+        // Khi Bật: đổi class thành "emoji-light light-on" để bật hiệu ứng phát sáng
+        function Light1_On() {
+            Light1.className = "emoji-light light-on";
+        }
+
+        // Khi Tắt: đổi class thành "emoji-light light-off" để làm tối mờ đi
+        function Light1_Off() {
+            Light1.className = "emoji-light light-off";
+        }
+
+        function Light2_On() {
+            Light2.className = "emoji-light light-on";
+        }
+
+        function Light2_Off() {
+            Light2.className = "emoji-light light-off";
+        }
+    </script>
+</body>
+</html>
